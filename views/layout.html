@@ -1,0 +1,47 @@
+<!DOCTYPE html>  <!-- instruções para html5 -->
+
+<!-- 
+    HTML
+        Não é uma linguagem de programação
+
+    Hypertext
+        Hiper textos
+        São textos que aceitam links e audiovisual
+
+    Markup
+        Marcações feitas com tags
+
+    Language
+        Linguagem
+
+    index.html é normalmente o arquivo que os servidores
+    procuram como principal
+-->
+
+<html lang="pt-br"> <!-- Tag HTML -->
+
+    <head>  <!-- Responsável por receber configurações da página -->
+        <!-- meta uft: evita erros com acentuação no body -->
+        <meta charset="UTF-8">
+
+        {% block title %}
+          <title>Casa Criativa</title>
+        {% endblock %}
+
+        {% include "head.html" %}
+    </head>
+
+    <body id="{{ bodyId }}">
+
+        <div id="container">
+          {% block content %}
+          {% endblock %}
+        </div>
+
+        <!-- Modal -->
+        {% include "modal.html" %}
+
+        <!-- link com o arquivo .js -->
+        <script src="/scripts.js"></script>
+    </body>
+</html>
